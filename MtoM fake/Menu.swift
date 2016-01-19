@@ -9,12 +9,12 @@
 import UIKit
 
 class Menu: UIView {
-
+    
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
-        // Drawing code
+    // Drawing code
     }
     */
     
@@ -25,9 +25,21 @@ class Menu: UIView {
         salaryFilter = MenuButton(informationVC: vc)
         jobFilter = MenuButton(informationVC: vc)
     }
+<<<<<<< Updated upstream
+<<<<<<< HEAD
     
     var vc: InformationVC?
     
+=======
+    
+    var vc: InformationVC?
+    
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
+=======
+    
+    var vc: InformationVC?
+    
+>>>>>>> Stashed changes
     var spaceFilter = MenuButton()
     var salaryFilter = MenuButton()
     var jobFilter = MenuButton()
@@ -36,7 +48,17 @@ class Menu: UIView {
     
     
     override func layoutSubviews() {
+<<<<<<< Updated upstream
+<<<<<<< HEAD
         
+=======
+        spaceFilter = MenuButton(menuBt: self)
+        salaryFilter = MenuButton(menuBt: self)
+        jobFilter = MenuButton(menuBt: self)
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
+=======
+        
+>>>>>>> Stashed changes
         self.clipsToBounds = true
         setTitleForFilterButton()
         asignSetOfButtonForMenuButton()
@@ -75,6 +97,10 @@ class Menu: UIView {
         salaryFilter.titleEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 16, right: 8)
         jobFilter.titleEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 16, right: 8)
     }
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 //    func showPlacePopView(){
 //        vc?.placePopView!.hidden = false
 //    }
@@ -85,4 +111,51 @@ class Menu: UIView {
 //        vc?.jobPopView.hidden = false
 //    }
     
+<<<<<<< Updated upstream
 }
+=======
+    
+    func showPopView(sender: MenuButton) {
+        switch sender {
+        case spaceFilter:
+            vc?.placePopView?.showPopView(self)
+        case salaryFilter:
+            vc?.salaryPopView.showPopView(self)
+        case jobFilter:
+            vc?.jobPopView.showPopView(self)
+        default : break
+        }
+    }
+ /*
+    func hidePopViewsIfNeed(popViews: [PopView]) {
+        for item in popViews {
+            if item.isActive == true {
+                item.active = !item.active
+                return item
+            }
+            
+        }
+    }
+*/
+    func hidePopViewIfNeed() {
+        var popViews = [PopView]()
+        if let placePV = vc?.placePopView {
+            popViews += [placePV]
+        }
+        
+        if let salaryPV = vc?.salaryPopView {
+            popViews += [salaryPV]
+        }
+        
+        if let jobPV = vc?.jobPopView {
+            popViews += [jobPV]
+        }
+        
+        for item in popViews {
+            item.hidePopView(self)
+        }
+    }
+=======
+>>>>>>> Stashed changes
+}
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c

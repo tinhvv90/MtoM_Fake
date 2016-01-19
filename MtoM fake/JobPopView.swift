@@ -17,9 +17,23 @@ class JobPopView: PopView {
         // Drawing code
     }
     */
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 //    override func createPopbody() {
 //        super.createPopbody()
 //        createCityLabel("Type")
 //        createProvinceLabel("Job")
 //    }
+<<<<<<< Updated upstream
+=======
+    override func createPopBody() {
+        super.createPopBody()
+        createCityLabel("Type")
+        createProvinceLabel("Job")
+    }
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
+=======
+>>>>>>> Stashed changes
 }

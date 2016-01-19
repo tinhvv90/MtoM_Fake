@@ -14,4 +14,12 @@ class Job {
     var address: String = ""
     var description: String = ""
     var job: String = ""
+<<<<<<< Updated upstream
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
+=======
+}
+>>>>>>> Stashed changes

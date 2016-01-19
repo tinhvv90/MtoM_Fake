@@ -10,8 +10,14 @@ import UIKit
 
 class MenuButton: UIButton {
     
+<<<<<<< HEAD
     
     
+<<<<<<< Updated upstream
+=======
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
+=======
+>>>>>>> Stashed changes
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -29,16 +35,39 @@ class MenuButton: UIButton {
     
     var informationVC : InformationVC?
     var popView : PopView?
+<<<<<<< Updated upstream
+<<<<<<< HEAD
     weak var menu : Menu?
+=======
+    weak var menuBt : Menu!
+    
+    
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
+=======
+    weak var menu : Menu?
+>>>>>>> Stashed changes
     
     convenience init(informationVC:InformationVC) {
         self.init()
         self.informationVC = informationVC
     }
     
+<<<<<<< Updated upstream
+<<<<<<< HEAD
     convenience init(menu: Menu) {
         self.init()
         self.menu = menu
+=======
+    convenience init(menuBt: Menu) {
+        self.init()
+        self.menuBt = menuBt
+        
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
+=======
+    convenience init(menu: Menu) {
+        self.init()
+        self.menu = menu
+>>>>>>> Stashed changes
     }
     
     var title : String = "" {
@@ -101,9 +130,18 @@ class MenuButton: UIButton {
         super.layoutSubviews()
         if selected {
             backgroundColor = UIColor.whiteColor()
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+            menuBt.showPopView(self)
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
+=======
+>>>>>>> Stashed changes
         } else {
             backgroundColor = UIColor.clearColor()
+            menuBt.hidePopViewIfNeed()
         }
+        
         layoutArrowDown()
     }
     
@@ -118,9 +156,13 @@ class MenuButton: UIButton {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
         resetOtherButton()
-        print("touchesBegan \(self.selected)")
         selected = !selected
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
         if selected == true{
             informationVC?.popView?.ShowPopView(self)
         }
@@ -135,8 +177,9 @@ class MenuButton: UIButton {
 //            informationVC?.jobPopView.HidePopView(self)
 //        }
         
+=======
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
     }
-    
     func resetOtherButton() {
         for item in otherButtons {
             if item.selected == true {

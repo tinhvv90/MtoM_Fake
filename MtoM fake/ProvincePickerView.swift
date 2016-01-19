@@ -8,6 +8,10 @@
 
 import UIKit
 
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 class ProvincePickerView: UIView ,UIPickerViewDataSource,UIPickerViewDelegate{
 
     var provincePickerView = UIPickerView()
@@ -30,6 +34,22 @@ class ProvincePickerView: UIView ,UIPickerViewDataSource,UIPickerViewDelegate{
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
+<<<<<<< Updated upstream
+=======
+class ProvincePickerView: PickerView , UIPickerViewDataSource{
+
+    var provincePickerView = UIPickerView()
+    
+    var dataProvincePickerView = ["Thai Binh","TPHCM","Ha Noi"]
+    
+    override func createPickerView() {
+        super.createPickerView()
+        provincePickerView.dataSource = self
+    }
+    
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
+=======
+>>>>>>> Stashed changes
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return dataProvincePickerView.count
@@ -37,8 +57,19 @@ class ProvincePickerView: UIView ,UIPickerViewDataSource,UIPickerViewDelegate{
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return dataProvincePickerView[row]
     }
+<<<<<<< Updated upstream
+<<<<<<< HEAD
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         popView.provinceTextFeild.text = dataProvincePickerView[row]
+=======
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        popView.provinceButton.setTitle(dataProvincePickerView[row], forState: UIControlState.Normal)
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
+=======
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        popView.provinceTextFeild.text = dataProvincePickerView[row]
+>>>>>>> Stashed changes
     }
 
     /*

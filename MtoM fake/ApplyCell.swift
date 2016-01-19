@@ -30,9 +30,23 @@ class ApplyCell: UITableViewCell {
         applyView.mt_innerAlign(left: 8, top: 0, right: 8, bottom: 0)
         applyView.roundBorder()
         applyView.backgroundColor = UIColor.whiteColor()
-        
+        setupWebButton()
+        setupCallButton()
+        mt_createVerticalMenu([webButton,callButton], edge: UIEdgeInsets(top: 8, left: 16, bottom: 16, right: 16), gap: 8, seperateColor: UIColor.clearColor())
+    }
+    
+    func setupWebButton(){
+        webButton = setupButton()
         applyView.addSubview(webButton)
+    }
+    
+    func setupCallButton(){
+        callButton = setupButton()
         applyView.addSubview(callButton)
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
         mt_createVerticalMenu([webButton,callButton], edge: UIEdgeInsets(top: 8, left: 16, bottom: 16, right: 16), gap: 8, seperateColor: UIColor.clearColor())
         setupButton()
     }
@@ -44,6 +58,21 @@ class ApplyCell: UITableViewCell {
         callButton.backgroundColor = UIColor.redColor()
     }
     
+<<<<<<< Updated upstream
+=======
+    }
+    
+    func setupButton() -> UIButton {
+        let button = UIButton(type: UIButtonType.System)
+        button.roundBorder()
+        button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        button.backgroundColor = UIColor.redColor()
+        return button
+    }
+    
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
+=======
+>>>>>>> Stashed changes
     func setLayoutOfHeaderCell() {
         self.addSubview(headerApplyView)
         headerApplyView.mt_innerAlign(left: 8, top: 0, right: 8, bottom: 16)

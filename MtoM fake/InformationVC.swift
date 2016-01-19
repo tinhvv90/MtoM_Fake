@@ -42,11 +42,24 @@ class InformationVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     
     var tbv = UITableView()
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     var menu : Menu?
 //    var placePopView : PlacePopView?
 //    var salaryPopView : SalaryPopView!
 //    var jobPopView : JobPopView!
     var popView: PopView?
+<<<<<<< Updated upstream
+=======
+    var menuVC : Menu?
+    var placePopView : PlacePopView!
+    var salaryPopView : SalaryPopView!
+    var jobPopView : JobPopView!
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
+=======
+>>>>>>> Stashed changes
     
     var data : [Job] = {
         var result = [Job]()
@@ -85,22 +98,41 @@ class InformationVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
         menu = Menu(vc: self, frame: CGRectZero)
 //        placePopView = PlacePopView(informationVC: self)
 //        salaryPopView = SalaryPopView(informationVC: self)
 //        jobPopView = JobPopView(informationVC: self)
         popView = PopView(informationVC: self)
+<<<<<<< Updated upstream
+=======
+        menuVC = Menu(vc: self, frame: CGRectZero)
+        placePopView = PlacePopView(vc: self)
+        salaryPopView = SalaryPopView(vc: self)
+        jobPopView = JobPopView(vc: self)
+
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
+=======
+>>>>>>> Stashed changes
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Job Search"
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         self.navigationItem.hidesBackButton = true
         self.edgesForExtendedLayout = UIRectEdge.None
         self.tbv.separatorStyle =  UITableViewCellSeparatorStyle.None
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 
         layoutMenu()
         
         createTableView()
         layoutPopView()
+<<<<<<< Updated upstream
         
 //        layoutPlacePopView()
 //        layoutSalaryPopView()
@@ -138,6 +170,80 @@ class InformationVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         view.addSubview(popView!)
         popView?.mt_innerAlign(left: 0, top: nil, right: 0, bottom: 0)
         popView?.mt_innerAlign(left: nil, top: (0, menu), right: nil, bottom: nil)
+=======
+        self.tbv.allowsSelection = false
+
+        layoutMenu()
+        createTableView()
+        layoutPopView()
+        
+    }
+
+    func layoutMenu() {
+        view.addSubview(menuVC!)
+        menuVC!.mt_innerAlign(left: 0, top: 0, right: 0, bottom: nil)
+        menuVC!.mt_setHeight(60)
+        menuVC!.backgroundColor = UIColor.darkGrayColor()
+    }
+    
+    func layoutPopView() {
+        var popViews = [PopView]()
+        if let placePV = placePopView {
+            popViews += [placePV]
+        }
+        
+        if let salaryPV = salaryPopView {
+            popViews += [salaryPV]
+        }
+        
+        if let jobPV = jobPopView {
+            popViews += [jobPV]
+        }
+        for item in popViews {
+            view.addSubview(item)
+            item.mt_innerAlign(left: 0, top: nil, right: 0, bottom: 0)
+            item.mt_innerAlign(left: nil, top: (0, menuVC), right: nil, bottom: nil)
+        }
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
+=======
+        
+//        layoutPlacePopView()
+//        layoutSalaryPopView()
+//        layoutJobopView()
+    }
+    
+//    func layoutPlacePopView() {
+//        view.addSubview(placePopView!)
+//        placePopView!.mt_innerAlign(left: 0, top: nil, right: 0, bottom: 0)
+//        placePopView!.mt_innerAlign(left: nil , top: (0, menu), right: nil, bottom: nil)
+//    }
+//    
+//    func layoutSalaryPopView() {
+//        if menu!.salaryFilter.selected{
+//        view.addSubview(salaryPopView)
+//        salaryPopView.mt_innerAlign(left: (0, nil), top: (0, menu), right: (0, nil), bottom: (0, nil))
+//        }
+//    }
+//    
+//    func layoutJobopView() {
+//        if menu!.jobFilter.selected{
+//        view.addSubview(jobPopView)
+//        jobPopView.mt_innerAlign(left: (0, nil), top: (0, menu), right: (0, nil), bottom: (0, nil))
+//        }
+//    }
+
+    func layoutMenu() {
+        view.addSubview(menu!)
+        menu!.mt_innerAlign(left: 0, top: 0, right: 0, bottom: nil)
+        menu!.mt_setHeight(60)
+        menu!.backgroundColor = UIColor.darkGrayColor()
+    }
+    
+    func layoutPopView() {
+        view.addSubview(popView!)
+        popView?.mt_innerAlign(left: 0, top: nil, right: 0, bottom: 0)
+        popView?.mt_innerAlign(left: nil, top: (0, menu), right: nil, bottom: nil)
+>>>>>>> Stashed changes
     }
     
     func createTableView() {
@@ -150,7 +256,7 @@ class InformationVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     func layoutTableView() {
         view.addSubview(tbv)
         tbv.mt_innerAlign(left: 0, top: nil, right: 0, bottom: 0)
-        tbv.mt_innerAlign(left: nil, top: (0, menu), right: nil, bottom: nil)
+        tbv.mt_innerAlign(left: nil, top: (0, menuVC), right: nil, bottom: nil)
         self.tbv.backgroundColor = UIColor.headerColor()
     }
     
@@ -215,8 +321,7 @@ class InformationVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             jobCell.textContentLabel.text = data[indexPath.section].job
         case .GoDetail:
             let goDetailCell = cell as! DetailsCell
-            goDetailCell.detailButton.setTitle("Search", forState: .Normal)
-            
+            goDetailCell.detailButton.setTitle("Search", forState: .Normal)  
         case .Apply:
             let applyCell = cell as! ApplyCell
             applyCell.webButton.setTitle("Web", forState: .Normal)
@@ -224,10 +329,6 @@ class InformationVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         default : break
         }
         return cell!
-    }
-    
-    func setupDetailLabel(){
-        
     }
     
     internal func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
@@ -243,7 +344,20 @@ class InformationVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             return 40
         }
     }
+<<<<<<< HEAD
     
+  
+    // MARK - PickerView
+    
+<<<<<<< Updated upstream
+    
+ 
+        
+        
+    }
+    
+=======
+=======
   
     // MARK - PickerView
     
@@ -251,8 +365,10 @@ class InformationVC: UIViewController, UITableViewDataSource, UITableViewDelegat
  
         
         
+>>>>>>> Stashed changes
     }
     
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
     /*
     // MARK: - Navigation
     

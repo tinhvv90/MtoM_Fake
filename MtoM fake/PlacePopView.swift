@@ -18,9 +18,23 @@ class PlacePopView: PopView {
     }
     */
     
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 //    override func createPopbody() {
 //        super.createPopbody()
 //        createCityLabel("City")
 //        createProvinceLabel("Province")
 //    }
+<<<<<<< Updated upstream
+=======
+    override func createPopBody() {
+        super.createPopBody()
+        createCityLabel("City")
+        createProvinceLabel("Province")
+    }
+>>>>>>> f4f82ab324e0aaa515088b03c750689767bd476c
+=======
+>>>>>>> Stashed changes
 }
